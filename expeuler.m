@@ -3,6 +3,12 @@ function expeuler(c1,c2,h)
 y0 = c1;
 ydot0 = c2;
 
+A = 1;
+D = 1;
+E = 1;
+h0 = 1;
+r0 = 1;
+
 %% Create the grid
 t0 = 0;
 t(1) = t0;
@@ -20,9 +26,9 @@ for i=1:N
     po=fpo(t(i));
     
     if z(1,i) > 0
-        z(:,i+1) = z(:,i) + h*zdot1(pi,po,z(:,i));
+        z(:,i+1) = z(:,i) + h*zdot1(A,D,E,h0,r0,pi,po,z(:,i));
     elseif z(1,i) <= 0
-        z(:,i+1) = z(:,i) + h*zdot2(pi,po,z(:,i));
+        z(:,i+1) = z(:,i) + h*zdot2(A,D,E,h0,r0,pi,po,z(:,i));
     end
     
 end
