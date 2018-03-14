@@ -1,6 +1,6 @@
-function ret = zdot2(mu,z)
+function ret = zdot2(pi,po,z)
 
 ret = [z(2);...
-       mu*(2-z(1)^2)*z(2)-4*z(1)];
+       (pi-po)-z(1)-z(2)];
 
 end
