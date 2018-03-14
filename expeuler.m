@@ -16,7 +16,11 @@ z(2,1) = ydot0;
 for i=1:N
     t(i+1) = t(i) + h;
     
-    z(:,i+1) = z(:,i) + h*zdot(mu,z(:,i));
+    if z(1,i) > 0
+        z(:,i+1) = z(:,i) + h*zdot1(mu,z(:,i));
+    elseif z(1,i) <= 0
+        z(:,i+1) = z(:,i) + h*zdot2(mu,z(:,i));
+    end
     
 end
 figure(1)
