@@ -1,5 +1,5 @@
-function ret = fpo(t)
+function ret = fpo(ST,DR,t)
 
-ret = t;
+ret = ST - DR * t;
 
 end

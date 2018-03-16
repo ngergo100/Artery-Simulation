@@ -5,16 +5,16 @@ T = 20;
 N = (T-t0)/h;
 f = 1.2;
 mmHgToPa = 133.322365;
-DBP = 80 * mmHgToPa;
-PP = 40 * mmHgToPa;
+ST = 130 * mmHgToPa;
+DR = 3 * mmHgToPa;
 
-fpiResult(1) = fpi(DBP,PP,f,t(1));
+fpoResult(1) = fpo(ST,DR,t(1));
 
 for i=1:N
     t(i+1) = t(i) + h;
     
-    fpiResult(i+1) = fpi(DBP,PP,f,t(i+1));
+    fpoResult(i+1) = fpo(ST,DR,t(i+1));
 end
 
 figure(1)
-plot(t,fpiResult)
+plot(t,fpoResult)

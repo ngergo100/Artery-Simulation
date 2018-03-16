@@ -13,6 +13,8 @@ f = 1.2;                    %% Average adult heart beat frequency [Hz] (Between 
 mmHgToPa = 133.322365;      %% Conversation constant between mmHg -> Pa
 DBP = 80 * mmHgToPa;        %% Diastolic blood pressure [Pa]
 PP = 40 * mmHgToPa;         %% Pulse pressure [Pa]
+ST = 130 * mmHgToPa;        %% Start of ramp [Pa]
+DR = 3 * mmHgToPa;          %% Deflation rate [Pa]
 
 A = 1/(rho * r0 * Rmax);    %% Computed helper constant [m/kg]
 
@@ -30,12 +32,12 @@ for i=1:N
     t(i+1) = t(i) + h;
     
     pi=fpi(DBP,PP,f,t(i));
-    po=fpo(t(i));
+    po=fpo(ST,DR,t(i));
     
     if z(1,i) > 0
-        z(:,i + 1) = z(:,i) + h*zdot1(A,D,E,h0,r0,pi,po,z(:,i));
+        z(:,i + 1) = z(:,i) + h * zdot1(A,D,E,h0,r0,pi,po,z(:,i));
     elseif z(1,i) <= 0
-        z(:,i + 1) = z(:,i) + h*zdot2(A,D,E,h0,r0,pi,po,z(:,i));
+        z(:,i + 1) = z(:,i) + h * zdot2(A,D,E,h0,r0,pi,po,z(:,i));
     end
     
 end
