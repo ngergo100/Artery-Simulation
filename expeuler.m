@@ -9,13 +9,17 @@ h0 = 2e-03;                 %% Zero pressure wall thickness [m]
 r0 = 3e-04;                 %% Zero pressure internal radius [m]
 rho = 1000;                 %% Density of the blood (water) [kg/m^3]
 Rmax = 5e-2;                %% Average adult human arm radius [m]
+f = 1.2;                    %% Average adult heart beat frequency [Hz] (Between 1.00 and 1.67)
+mmHgToPa = 133.322365;      %% Conversation constant between mmHg -> Pa
+DBP = 80 * mmHgToPa;        %% Diastolic blood pressure [Pa]
+PP = 40 * mmHgToPa;         %% Pulse pressure [Pa]
 
 A = 1/(rho * r0 * Rmax);    %% Computed helper constant [m/kg]
 
 %% Create the grid
 t0 = 0;
 t(1) = t0;
-T = 1;
+T = 20;
 N = (T-t0)/h;
 
 %% Create the system
@@ -25,7 +29,7 @@ z(2,1) = ydot0;
 for i=1:N
     t(i+1) = t(i) + h;
     
-    pi=fpi(t(i));
+    pi=fpi(DBP,PP,f,t(i));
     po=fpo(t(i));
     
     if z(1,i) > 0
