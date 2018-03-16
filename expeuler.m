@@ -20,9 +20,10 @@ A = 1/(rho * r0 * Rmax);    %% Computed helper constant [m/kg]
 
 %% Create the grid
 t0 = 0;
-t(1) = t0;
 T = 20;
 N = (T-t0)/h;
+t = zeros(1,N);
+t(1) = t0;
 
 %% Create the system
 z(1,1) = y0;
@@ -31,14 +32,10 @@ z(2,1) = ydot0;
 for i=1:N
     t(i+1) = t(i) + h;
     
-    pi=fpi(DBP,PP,f,t(i));
-    po=fpo(ST,DR,t(i));
+    pin = fpi(DBP,PP,f,t(i));
+    pout = fpo(ST,DR,t(i));
     
-    if z(1,i) > 0
-        z(:,i + 1) = z(:,i) + h * zdot1(A,D,E,h0,r0,pi,po,z(:,i));
-    elseif z(1,i) <= 0
-        z(:,i + 1) = z(:,i) + h * zdot2(A,D,E,h0,r0,pi,po,z(:,i));
-    end
+    z(:,i + 1) = z(:,i) + h * zdot(A,D,E,h0,r0,pin,pout,z(:,i));
     
 end
 
