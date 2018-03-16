@@ -1,7 +1,7 @@
-function expeuler(c1,c2,h)
+function z = expeuler(h)
 %% Inputs
-y0 = c1;                    %% Initial position [m]
-ydot0 = c2;                 %% Initial velocity [m/s]
+y0 = -2e-3;                 %% Initial position [m]
+ydot0 = 0.05;               %% Initial velocity [m/s]
 
 D = 7.38e2;                 %% Damping modulus [Pa]
 E = 1.4e5;                  %% Elastic modulus [Pa]
@@ -36,6 +36,7 @@ for i=1:N
     pout = fpo(ST,DR,t(i));
     
     z(:,i + 1) = z(:,i) + h * zdot(A,D,E,h0,r0,pin,pout,z(:,i));
+    z(:,i + 1)
     
 end
 
