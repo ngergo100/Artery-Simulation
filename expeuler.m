@@ -1,9 +1,10 @@
-function z = expeuler(h)
+
 %% Inputs
+h = 0.0001;                 %% Time step [s]
 y0 = -2e-3;                 %% Initial position [m]
 ydot0 = 0.05;               %% Initial velocity [m/s]
 
-D = 7.38e1;                 %% Damping modulus [Pa s]
+D = 7.38e1;                 %% Damping modulus [Pas]
 E = 1.4e5;                  %% Elastic modulus [Pa]
 h0 = 3e-04;                 %% Zero pressure wall thickness [m]
 r0 = 2e-03;                 %% Zero pressure internal radius [m]
@@ -34,7 +35,7 @@ for i=1:N
     pout = fpo(ST,DR,t(i));
     
     z(:,i + 1) = z(:,i) + h * zdot(D,E,h0,r0,rho,Rmax,pin,pout,z(:,i));
-    z(:,i + 1)
+    
     
 end
 
@@ -43,5 +44,3 @@ plot(t,z(1,:))
 
 figure(2)
 plot(t,z(2,:))
-
-end
