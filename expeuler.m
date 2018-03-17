@@ -39,8 +39,14 @@ for i=1:N
     
 end
 
-figure(1)
+subplot(1,2,1)
 plot(t,z(1,:))
+title('Displacement')
+xlabel('t [s]')
+ylabel('x [m]')
 
-figure(2)
+subplot(1,2,2)
 plot(t,z(2,:))
+title('Velocity')
+xlabel('t [s]')
+ylabel('v [m/s]')
