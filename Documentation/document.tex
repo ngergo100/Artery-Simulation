@@ -21,5 +21,25 @@
 \usepackage{commath}
 
 \begin{document}
-$1$	
+$$\ddot{x}=\frac{1}{\rho r_0 R_{max}}\left [(P_i(t)-P_o(t))\cdot r_0-E\frac{h_0}{r_0}x-D\frac{h_0}{r_0}\dot{x}\right ]$$
+$$\ddot{x}=\frac{1}{\rho r_0 R_{max}}\left [(P_i(t)-P_o(t))\cdot r_0-4 \frac{E}{\pi^2}\cdot\frac{h_0^2}{r_0^2}\cdot\frac{h_0}{h_0+r_0+x}x-D\frac{h_0}{r_0}\dot{x}\right ]$$
+
+Let's say
+\begin{equation}
+y=\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}x\\\dot{x}\end{pmatrix}
+\label{eq:1}
+\end{equation}
+
+
+Then the derivative of $y$ would be
+
+\begin{equation}
+\begin{pmatrix}\dot{y_1}\\\dot{y_2}\end{pmatrix}=\begin{pmatrix}\dot{x}\\\ddot{x}\end{pmatrix}
+\label{eq:2}
+\end{equation} 
+
+So we can conclude that the equation below.
+\begin{equation} \dot{y}=\begin{pmatrix}\dot{x}\\\ddot{x}\end{pmatrix}=\begin{pmatrix}y_2\\aha\end{pmatrix}
+\label{eq:3}
+\end{equation} 
 \end{document}
