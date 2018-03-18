@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.16)  18 MAR 2018 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.16)  18 MAR 2018 19:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,7 +456,11 @@ LaTeX Info: Redefining \] on input line 2818.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/commath/commath.sty
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)) (./document.aux)
+)) (./document.aux
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -533,29 +537,64 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+<Pics/DispVeloEuler.png, id=1, 562.2606pt x 421.575pt>
+File: Pics/DispVeloEuler.png Graphic file (type png)
+
+<use Pics/DispVeloEuler.png>
+Package pdftex.def Info: Pics/DispVeloEuler.png used on input line 47.
+(pdftex.def)             Requested size: 426.79134pt x 320.0015pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 47--48
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Pics/DispVeloRK4.png, id=2, 562.2606pt x 421.575pt>
+File: Pics/DispVeloRK4.png Graphic file (type png)
+
+<use Pics/DispVeloRK4.png>
+Package pdftex.def Info: Pics/DispVeloRK4.png used on input line 54.
+(pdftex.def)             Requested size: 426.79134pt x 320.0015pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 54--55
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./document.aux) ) 
+[2 <./Pics/DispVeloEuler.png (PNG copy)>] [3 <./Pics/DispVeloRK4.png (PNG copy)
+>] (./document.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2867 strings out of 492995
- 36371 string characters out of 6132704
- 105930 words of memory out of 5000000
- 6377 multiletter control sequences out of 15000+600000
+ 2881 strings out of 492995
+ 36631 string characters out of 6132704
+ 106977 words of memory out of 5000000
+ 6387 multiletter control sequences out of 15000+600000
  9819 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,8n,25p,307b,130s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb>
-Output written on document.pdf (1 page, 56496 bytes).
+ 39i,8n,25p,307b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on document.pdf (3 pages, 175669 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

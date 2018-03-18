@@ -50,3 +50,5 @@ plot(t,z(2,:))
 title('Velocity')
 xlabel('t [s]')
 ylabel('v [m/s]')
+
+print('Documentation/Pics/DispVeloEuler','-dpng')

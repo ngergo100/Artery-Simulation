@@ -28,7 +28,7 @@ z(1,1) = y0;
 z(2,1) = ydot0;
 
 %% Calculate the solution
-for i=1:N
+for i=1:N-1
     t(i+1) = t(i)+h;
     
     pin = fpi(DBP,PP,f,t(i));
@@ -56,3 +56,5 @@ plot(t,z(2,:))
 title('Velocity')
 xlabel('t [s]')
 ylabel('v [m/s]')
+
+print('Documentation/Pics/DispVeloRK4','-dpng')
