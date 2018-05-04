@@ -1,4 +1,4 @@
-
+clear
 %% Inputs
 h = 0.0001;                 %% Time step [s]
 y0 = -2e-3;                 %% Initial position [m]
@@ -28,6 +28,7 @@ t(1) = t0;
 z(1,1) = y0;
 z(2,1) = ydot0;
 
+%% Calculate the solution
 for i=1:N
     t(i+1) = t(i) + h;
     
