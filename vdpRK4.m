@@ -2,8 +2,8 @@ clear
 close all
 clc
 %% Inputs
-y0 = 0;                 %% Initial position [m]
-ydot0 = 0.01;               %% Initial velocity [m/s]
+y0 = -2.1e-3;               %% Initial position [m]
+ydot0 = -0.1;               %% Initial velocity [m/s]
 
 D = 7.38e1;                 %% Damping modulus [Pas]
 E = 1.4e5;                  %% Elastic modulus [Pa]
@@ -19,7 +19,7 @@ ST = 130 * mmHgToPa;        %% Start of ramp [Pa]
 DR = 3 * mmHgToPa;          %% Deflation rate [Pa]
 
 %% Load real pi and po
-dataSourceName='processed/20170504_no2_fesz-processed-';
+dataSourceName='processed/20170504_no1_fesz-processed-';
 t_p_o_name=strcat(dataSourceName,'t_p_o.mat');
 p_o_name=strcat(dataSourceName,'p_o.mat');
 t_p_i_name=strcat(dataSourceName,'t_p_i.mat');
@@ -30,8 +30,8 @@ load(t_p_i_name);
 load(p_i_name);
 
 %% Convert [Bar] to [Pa]
-p_o=10^4*p_o;
-p_i=10^4*p_i;
+p_o=10^5*p_o;
+p_i=10^5*p_i;
 
 %% Create the grid
 h=t_p_i(2)-t_p_i(1);        %% Time step [s]
