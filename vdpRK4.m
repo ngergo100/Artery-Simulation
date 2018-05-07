@@ -13,7 +13,7 @@ rho = 1000;                 %% Density of blood (water) [kg/m^3]
 Rmax = 5e-2;                %% Average adult human arm radius [m]
 
 %% Load real pi and po
-dataSourceName='processed/20170504_no1_laza-processed-';
+dataSourceName='processed/20170504_no2_fesz-processed-';
 t_p_o_name=strcat(dataSourceName,'t_p_o.mat');
 p_o_name=strcat(dataSourceName,'p_o.mat');
 t_p_i_name=strcat(dataSourceName,'t_p_i.mat');
@@ -24,8 +24,8 @@ load(t_p_i_name);
 load(p_i_name);
 
 %% Convert [Bar] to [Pa]
-p_o=10^4*p_o;
-p_i=10^4*p_i;
+p_o=10^5*p_o;
+p_i=10^5*p_i;
 
 %% Remove last elements because they are not needed
 index = length(p_i);
