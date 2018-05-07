@@ -5,7 +5,7 @@ clc
 y0 = -2.1e-3;               %% Initial position [m]
 ydot0 = -0.1;               %% Initial velocity [m/s]
 
-D = 7.38e1;                 %% Damping modulus [Pas]
+D = 7.38e2;                 %% Damping modulus [Pas]
 E = 1.4e5;                  %% Elastic modulus [Pa]
 h0 = 3e-04;                 %% Zero pressure wall thickness [m]
 r0 = 2e-03;                 %% Zero pressure internal radius [m]
