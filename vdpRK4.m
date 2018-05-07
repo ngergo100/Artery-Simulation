@@ -19,7 +19,7 @@ ST = 130 * mmHgToPa;        %% Start of ramp [Pa]
 DR = 3 * mmHgToPa;          %% Deflation rate [Pa]
 
 %% Load real pi and po
-dataSourceName='processed/20170504_no1_fesz-processed-';
+dataSourceName='processed/20170504_no1_laza-processed-';
 t_p_o_name=strcat(dataSourceName,'t_p_o.mat');
 p_o_name=strcat(dataSourceName,'p_o.mat');
 t_p_i_name=strcat(dataSourceName,'t_p_i.mat');
@@ -30,8 +30,20 @@ load(t_p_i_name);
 load(p_i_name);
 
 %% Convert [Bar] to [Pa]
-p_o=10^5*p_o;
-p_i=10^5*p_i;
+p_o=10^4*p_o;
+p_i=10^4*p_i;
+
+%% Remove last elements because they are not needed
+index = length(p_i);
+while index >= length(t_p_i)
+p_i(index)=[];
+index = length(p_i);
+end
+index = length(p_o);
+while index >= length(t_p_i)
+p_o(index)=[];
+index = length(p_o);
+end
 
 %% Create the grid
 h=t_p_i(2)-t_p_i(1);        %% Time step [s]
@@ -71,16 +83,28 @@ for i=1:N-1
 end
 %% Plotting the results
 
-subplot(1,2,1)
+subplot(2,2,1)
 plot(t,z(1,:))
 title('Displacement')
 xlabel('t [s]')
 ylabel('x [m]')
 
-subplot(1,2,2)
+subplot(2,2,2)
 plot(t,z(2,:))
 title('Velocity')
 xlabel('t [s]')
 ylabel('v [m/s]')
+
+subplot(2,2,3)
+plot(t,p_i)
+title('Pi')
+xlabel('t [s]')
+ylabel('p [Pa]')
+
+subplot(2,2,4)
+plot(t,p_o)
+title('Po')
+xlabel('t [s]')
+ylabel('p [Pa]')
 
 print('Documentation/Pics/DispVeloRK4','-dpng')

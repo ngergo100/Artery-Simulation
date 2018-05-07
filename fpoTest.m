@@ -1,3 +1,5 @@
+close all
+clear 
 h = 0.001;
 t0 = 0;
 t(1) = t0;
